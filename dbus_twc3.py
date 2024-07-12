@@ -106,6 +106,7 @@ class DbusTWC3Service:
     self._dbusservice.add_path('/FirmwareVersion', v['firmware_version'])
     self._dbusservice.add_path('/HardwareVersion', v['part_number'])
     self._dbusservice.add_path('/Connected', 1)
+    self._dbusservice.add_path('/Position', 1)
 
     self._dbusservice.add_path('/CustomName', 'Tesla Charger')
 
@@ -141,6 +142,7 @@ class DbusTWC3Service:
       ds.add_path('/FirmwareVersion', 0)
       ds.add_path('/HardwareVersion', 0)
       ds.add_path('/Connected', 1)
+      ds.add_path('/Position', 1)
 
       ds.add_path('/CustomName', self._name)
       ds.add_path('/TemperatureType', 2)  # 0=battery, 1=fridge, 2=generic
