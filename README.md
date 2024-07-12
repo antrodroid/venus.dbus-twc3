@@ -1,3 +1,5 @@
+forked and adjusted here and there
+
 # Venus OS Driver for Tesla Wall Connector 3 (TWC3)
 
 This program regularly polls a Tesla Wall Connector 3 on the
@@ -21,7 +23,7 @@ If you want to run the script on the GX device, proceed like
 this 
 ```
 cd /data/
-git clone http://github.com/trixing/venus.dbus-twc3
+git clone http://github.com/antrodroid/venus.dbus-twc3
 chmod +x /data/venus.dbus-twc3/service/run
 chmod +x /data/venus.dbus-twc3/service/log/run
 ```
