@@ -22,10 +22,11 @@ providing the data on the dbus.
 If you want to run the script on the GX device, proceed like
 this 
 ```
-cd /data/
-git clone http://github.com/antrodroid/venus.dbus-twc3
-chmod +x /data/venus.dbus-twc3/service/run
-chmod +x /data/venus.dbus-twc3/service/log/run
+wget https://github.com/antrodroid/venus.dbus-twc3/archive/refs/heads/main.zip
+unzip main.zip "dbus-twc3/*" -d /data
+chmod a+x /data/dbus-twc3/*.sh
+/data/dbus-twc3/install.sh
+rm main.zip
 ```
 
 If you are on Venus OS < 2.80 you need to also install the
