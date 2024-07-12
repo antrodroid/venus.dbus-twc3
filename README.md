@@ -23,8 +23,8 @@ If you want to run the script on the GX device, proceed like
 this 
 ```
 wget https://github.com/antrodroid/venus.dbus-twc3/archive/refs/heads/main.zip
-unzip main.zip "dbus-twc3-main/*"
-mv dbus-twc3-main /data/dbus-twc3
+unzip main.zip
+mv venus.dbus-twc3-main /data/dbus-twc3
 chmod a+x /data/dbus-twc3/*.sh
 /data/dbus-twc3/install.sh
 rm main.zip
