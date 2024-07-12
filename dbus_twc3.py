@@ -242,7 +242,7 @@ class DbusTWC3Service:
         self._tempservice['/CustomName'] = self._name + ' Idle [A]'
         self._tempservice['/Temperature'] = ds['/SetCurrent']
 
-    log.info("Car Consumption: %s, State: %s" % (ds['/Ac/Power'], ds['/Status']))
+    log.debug("Car Consumption: %s, State: %s" % (ds['/Ac/Power'], ds['/Status']))
     return d
 
 
@@ -258,7 +258,7 @@ def main():
   handler.setFormatter(formatter)
   root.addHandler(handler)
 
-  log.info('Startup')
+  log.debug('Startup')
 
   parser = argparse.ArgumentParser()
   parser.add_argument('--ip', default='TeslaWallConnector.local', help='IP Address of Station')
@@ -268,7 +268,7 @@ def main():
   parser.add_argument('--name', default='TWC3', help='User visible name of Wallbox')
   args = parser.parse_args()
   if args.ip:
-      log.info('User supplied IP: %s' % args.ip)
+      log.debug('User supplied IP: %s' % args.ip)
 
   try:
     thread.daemon = True # allow the program to quit
@@ -287,13 +287,13 @@ def main():
         ip=ip,
         name=args.name,
         dryrun=args.dryrun)
-      log.info("Connected to TWC3 on ip %s" % ip)
+      log.debug("Connected to TWC3 on ip %s" % ip)
       break
     except requests.exceptions.ConnectionError:
-        log.info("Failed to connect to TWC3 on ip %s" % ip)
+        log.debug("Failed to connect to TWC3 on ip %s" % ip)
         time.sleep(1)
 
-  log.info('Connected to dbus, and switching over to gobject.MainLoop() (= event based)')
+  log.debug('Connected to dbus, and switching over to gobject.MainLoop() (= event based)')
   mainloop = gobject.MainLoop()
   mainloop.run()
 
