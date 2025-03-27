@@ -58,7 +58,8 @@ class DbusTWC3Service:
                ip=None,
                dryrun=False):
     self._name = name
-    ip = ip or 'TeslaWallConnector.local'
+    #ip = ip or 'TeslaWallConnector.local'
+    ip = '192.168.178.144'
     url = 'http://' + ip + '/api/1'
     self.URL = url + '/vitals'
     self.LIFETIME = url + '/lifetime'
@@ -263,7 +264,8 @@ def main():
   log.debug('Startup')
 
   parser = argparse.ArgumentParser()
-  parser.add_argument('--ip', default='TeslaWallConnector.local', help='IP Address of Station')
+  #parser.add_argument('--ip', default='TeslaWallConnector.local', help='IP Address of Station')
+  parser.add_argument('--ip', default='192.168.178.144', help='192.168.178.144')
   parser.add_argument('--service', default='com.victronenergy.evcharger.twc3', help='Service Name, e.g. for testing')
   parser.add_argument('--instance', default=42, help='Instance on DBUS, will be incremented by 100 in dryrun mode')
   parser.add_argument('--dryrun', dest='dryrun', action='store_true')
